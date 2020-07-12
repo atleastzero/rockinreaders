@@ -1,0 +1,15 @@
+{
+  "name": "rockinreaders",
+  "version": "1.0.0",
+  "description": "A registration for Rockin' Readers",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Megan OBryan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.5"
+  }
+}

@@ -1,0 +1,140 @@
+body, html {
+    background-color: #21eded;
+}
+
+#masthead {
+    width: 100%;
+    background-color: gainsboro;
+}
+
+#title {
+    font-size: 35px;
+    color: black;
+    font-weight: normal;
+    margin: 0.25em;
+}
+
+#title-break {
+    background-color: white;
+    margin: 0;
+}
+
+.nav-item {
+    text-transform: uppercase;
+    color: black;
+    font-size: 17px;
+}
+
+#menuNavbar {
+    padding: 0.8em 1.5em;
+}
+
+.navbar-nav .nav-item {
+    padding: 0;
+}
+
+#content {
+    background-color: #21eded;
+}
+
+footer {
+    margin-top: 1.5em;
+    padding: 20px;
+    background-color: black;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    bottom: 0;
+}
+
+#page-section {
+    background-color: white;
+    margin: 1.5em auto;
+    width: 80%;
+}
+
+.section {
+    padding: 2em 1em;
+}
+
+#front-page-did-you-know {
+    padding: 10% 1em 0;
+    background-image: url(https://secureservercdn.net/45.40.148.147/hgd.0d2.myftpupload.com/wp-content/uploads/2020/06/ben-white-qDY9ahp0Mto-unsplash-1-scaled.jpg);
+    background-color: black;
+    background-size: cover;
+    position: relative;
+    min-height: 500px;
+    height: 100%;
+    width: 100%;
+    text-align: right;
+    color: white;
+}
+
+#front-page-ctas {
+    margin-top: 25px;
+}
+
+.col-cta {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#about-cta {
+    background-image: url(https://secureservercdn.net/45.40.148.147/hgd.0d2.myftpupload.com/wp-content/uploads/2020/06/guy-basabose-c-5Y_hUeRks-unsplash-5-1024x659.jpg);
+    background-size: cover;
+}
+
+#about-cta figcaption{
+    width: calc((100% - 32px)/3);
+    position: absolute;
+    bottom: 0;
+}
+
+.page-header {
+    position: relative;
+}
+
+.page-background {
+    background-position: center;
+    filter: brightness(50%);
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    position: absolute;
+}
+
+.about{
+    background-image: url(https://secureservercdn.net/45.40.148.147/hgd.0d2.myftpupload.com/wp-content/uploads/2020/06/patricia-prudente-qESmLLXAmWs-unsplash-1-scaled.jpg?time=1594402576);
+}
+
+.reading {
+    background-image: url(https://secureservercdn.net/45.40.148.147/hgd.0d2.myftpupload.com/wp-content/uploads/2020/06/josh-applegate-p_KJvKVsH14-unsplash-scaled.jpg?time=1594516799);
+}
+
+.page-title {
+    z-index: 10;
+    margin: 175px;
+    position: absolute;
+    color: white;
+    left: 50%;
+    width: 500px;
+    text-align: center;
+    margin-left: -250px;
+}
+
+.page-content {
+    position: relative;
+    z-index: -10;
+}
+
+.spacer {
+    margin-top: 425px;
+}
+
+.page-content {
+    position: absolute;
+    background-color: white;
+    width: 80%;
+    padding: 0 2em 1em;
+    text-align: center;
+}
