@@ -69,6 +69,22 @@ footer {
     color: white;
 }
 
+.did-you-know-header {
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+
+.did-you-know-content {
+    color: white;
+    padding: 3px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+}
+
 #front-page-ctas {
     margin: 25px;
 }
