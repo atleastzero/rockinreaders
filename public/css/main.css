@@ -67,12 +67,18 @@ footer {
     width: 100%;
     text-align: right;
     color: white;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .did-you-know-mobile-content {
     color: white;
     background-color: rgba(0, 0, 0, 0.86);
-    padding: 10px 3px;
+    padding: 10px 10px;
+}
+
+.did-you-know-mobile-image img {
+    width: 100%;
 }
 
 #front-page-ctas {
