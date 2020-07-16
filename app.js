@@ -23,6 +23,26 @@ app.get('/cool-cats', (req, res) => {
   res.render('cool-cats')
 })
 
+app.get('/rockin-rollers', (req, res) => {
+  res.render('rockin-rollers')
+})
+
+app.get('/rock-stars', (req, res) => {
+  res.render('rock-stars')
+})
+
+app.get('/super-stars', (req, res) => {
+  res.render('super-stars')
+})
+
+app.get('/mega-stars', (req, res) => {
+  res.render('mega-stars')
+})
+
+app.get('/rock-legends', (req, res) => {
+  res.render('rock-legends')
+})
+
 const port = process.env.PORT || 3000
 
 app.listen(port, () => console.log(`Example app listening at port ${port}`))

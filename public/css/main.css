@@ -141,7 +141,27 @@ footer {
 }
 
 .cool-cats {
-    background-image: url(https://secureservercdn.net/45.40.148.147/hgd.0d2.myftpupload.com/wp-content/uploads/2020/07/jeremy-allouche-YStboKiFPVw-unsplash-scaled.jpg?time=1594871144);
+    background-image: url(/images/cool-cats-header.jpg);
+}
+
+.rockin-rollers {
+    background-image: url(/images/rockin-rollers-header.jpg);
+}
+
+.rock-stars {
+    background-image: url(/images/rock-stars-header.jpg);
+}
+
+.super-stars {
+    background-image: url(/images/super-stars-header.jpg);
+}
+
+.mega-stars {
+    background-image: url(/images/mega-stars-header.jpg);
+}
+
+.rock-legends {
+    background-image: url(/images/rock-legends-header.jpg);
 }
 
 .page-title {
@@ -165,4 +185,14 @@ footer {
 
 .spacer {
     height: 425px;
+}
+
+.assessment-preview {
+    height: 250px;
+    width: 250px;
+    border-radius: 100%;
+}
+
+.assessment-image {
+    max-width: 100%;
 }
