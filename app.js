@@ -19,6 +19,10 @@ app.get('/reading-levels', (req, res) => {
   res.render('reading-levels')
 })
 
+app.get('/cool-cats', (req, res) => {
+  res.render('cool-cats')
+})
+
 const port = process.env.PORT || 3000
 
 app.listen(port, () => console.log(`Example app listening at port ${port}`))

@@ -69,20 +69,10 @@ footer {
     color: white;
 }
 
-.did-you-know-header {
+.did-you-know-mobile-content {
     color: white;
-    position: absolute;
-    right: 10px;
-    top: 15px;
-}
-
-.did-you-know-content {
-    color: white;
-    padding: 3px;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    right: 10px;
-    bottom: 15px;
+    background-color: rgba(0, 0, 0, 0.86);
+    padding: 10px 3px;
 }
 
 #front-page-ctas {
@@ -148,6 +138,10 @@ footer {
 
 .reading {
     background-image: url(https://secureservercdn.net/45.40.148.147/hgd.0d2.myftpupload.com/wp-content/uploads/2020/06/josh-applegate-p_KJvKVsH14-unsplash-scaled.jpg?time=1594516799);
+}
+
+.cool-cats {
+    background-image: url(https://secureservercdn.net/45.40.148.147/hgd.0d2.myftpupload.com/wp-content/uploads/2020/07/jeremy-allouche-YStboKiFPVw-unsplash-scaled.jpg?time=1594871144);
 }
 
 .page-title {
