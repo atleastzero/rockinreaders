@@ -70,7 +70,7 @@ footer {
 }
 
 #front-page-ctas {
-    margin-top: 25px;
+    margin: 25px;
 }
 
 .col-cta {
@@ -79,15 +79,38 @@ footer {
     text-transform: uppercase;
 }
 
-#about-cta {
-    background-image: url(https://secureservercdn.net/45.40.148.147/hgd.0d2.myftpupload.com/wp-content/uploads/2020/06/guy-basabose-c-5Y_hUeRks-unsplash-5-1024x659.jpg);
-    background-size: cover;
+.cta {
+    margin-top: 20px;
 }
 
-#about-cta figcaption{
-    width: calc((100% - 32px)/3);
+.link-cta {
+    display: block;
+    background-position: center;
+    background-size: cover;
+    height: 475px;
+    width: 100%;
+}
+
+.link-cta p {
+    color: white;
+    padding: 3px;
+    background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
-    bottom: 0;
+    width: 80%;
+    left: 10%;
+    bottom: 25px;
+}
+
+#about-cta {
+    background-image: url(https://secureservercdn.net/45.40.148.147/hgd.0d2.myftpupload.com/wp-content/uploads/2020/06/guy-basabose-c-5Y_hUeRks-unsplash-5-1024x659.jpg);
+}
+
+#level-cta {
+    background-image: url(https://secureservercdn.net/45.40.148.147/hgd.0d2.myftpupload.com/wp-content/uploads/2020/06/jerry-wang-Lq1OOCkMNb4-unsplash-6-683x1024.jpg);
+}
+
+#sign-up-cta {
+    background-image: url(https://secureservercdn.net/45.40.148.147/hgd.0d2.myftpupload.com/wp-content/uploads/2020/06/streetwindy-TKoPa1xRu7I-unsplash-3-683x1024.jpg);
 }
 
 .page-header {
@@ -123,18 +146,13 @@ footer {
 }
 
 .page-content {
-    position: relative;
     z-index: -10;
+    background-color: white;
+    width: 100%;
+    padding: 0 2em 1em;
+    text-align: center;
 }
 
 .spacer {
-    margin-top: 425px;
-}
-
-.page-content {
-    position: absolute;
-    background-color: white;
-    width: 80%;
-    padding: 0 2em 1em;
-    text-align: center;
+    height: 425px;
 }
