@@ -58,7 +58,7 @@ app.post('/login', (req, res, next) => {
       }
 
       if (!user) {
-        return res.redirect('/login?info=' + info)
+        return res.render('/login?info=' + info)
       }
 
       req.logIn(user, function(err) {
@@ -66,7 +66,7 @@ app.post('/login', (req, res, next) => {
           return next(err)
         }
 
-        return res.redirect('/')
+        return res.render('/')
       });
 
   })(req, res, next)
