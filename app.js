@@ -27,7 +27,7 @@ app.use(expressSession)
 app.use(passport.initialize())
 app.use(passport.session())
 
-mongoose.connect('mongodb://localhost/MyDatabase',
+mongoose.connect('mongodb://localhost/MyDatabase' || process.env.MONGODB_URL,
   { useNewUrlParser: true, useUnifiedTopology: true })
 
 const Schema = mongoose.Schema;
@@ -66,7 +66,7 @@ app.post('/login', (req, res, next) => {
           return next(err)
         }
 
-        return res.render('/')
+        return res.send('/')
       });
 
   })(req, res, next)
