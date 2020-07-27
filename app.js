@@ -50,6 +50,14 @@ app.get('/', (req, res) => {
   res.render('home')
 })
 
+app.get('/login', (req, res) => {
+  if (req.query.info) {
+    res.render('login', {info: req.query.info})
+  } else {
+    res.render('login')
+  }
+})
+
 app.post('/login', (req, res, next) => {
   passport.authenticate('local',
     (err, user, info) => {
@@ -58,23 +66,33 @@ app.post('/login', (req, res, next) => {
       }
 
       if (!user) {
-        return res.render('/login?info=' + info)
+        return res.redirect('/login?info=' + info)
       }
 
-      req.logIn(user, function(err) {
+      req.logIn(user, (err) => {
         if (err) {
           return next(err)
         }
 
         return res.send('/')
-      });
+      })
 
-  })(req, res, next)
+    })(req, res, next)
 })
 
-app.get('/login',
-  (req, res) => res.render('login')
-)
+app.get('/register', function(req, res) {
+  res.render('register')
+})
+
+app.post('/register', function(req, res) {
+  UserDetails.register(
+    { email: req.body.email, active: true },
+    req.body.password,
+    { firstName: req.body.firstName },
+    { lastName: req.body.lastName }
+  )
+  res.redirect('/')
+})
 
 app.get('/private',
   connectEnsureLogin.ensureLoggedIn(),
