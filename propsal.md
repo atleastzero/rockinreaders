@@ -47,7 +47,7 @@ I'm trying to match the look of rockinreaders.com (which is the WP site as of 18
 
 ## Approval Checklist
 - [x] If I have a team project, I wrote this proposal to represent my work and only my work
-- [ ] I have completed all the necessary parts of this proposal
+- [x] I have completed all the necessary parts of this proposal
 
 ### Sign off
 
