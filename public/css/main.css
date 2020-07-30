@@ -163,15 +163,19 @@ footer {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.login{
+.login {
     background-image: url(/images/login-header.jpg);
 }
 
-.register{
+.register {
     background-image: url(/images/login-header.jpg);
 }
 
-.about{
+.profile {
+    background-image: url(/images/login-header.jpg);
+}
+
+.about {
     background-image: url(https://secureservercdn.net/45.40.148.147/hgd.0d2.myftpupload.com/wp-content/uploads/2020/06/patricia-prudente-qESmLLXAmWs-unsplash-1-scaled.jpg?time=1594402576);
 }
 

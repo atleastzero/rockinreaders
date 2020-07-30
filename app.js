@@ -1,141 +1,40 @@
-const express = require('express')
-const app = express()
-const exphbs = require('express-handlebars')
-const bodyParser = require('body-parser')
-require('dotenv').config()
-const expressSession = require('express-session')({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false
-})
-const passport = require('passport')
-const mongoose = require('mongoose')
-const passportLocalMongoose = require('passport-local-mongoose')
-const connectEnsureLogin = require('connect-ensure-login')
+const express = require('express');
+const app = express();
+const exphbs = require('express-handlebars');
 
-mongoose.set('useCreateIndex', true);
+require('dotenv').config();
 
-app.set('view engine', 'hbs')
-app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
+var mongoose = require('mongoose');
+var passport = require('passport');
+var flash = require('connect-flash');
 
-app.use(express.static(__dirname + '/public'))
+var morgan = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var session = require('express-session');
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(expressSession)
+var configDB = require('./data/rockin-db.js');
 
-app.use(passport.initialize())
-app.use(passport.session())
+mongoose.connect(configDB.url, { useMongoClient: true });
 
-mongoose.connect('mongodb://localhost/MyDatabase' || process.env.MONGODB_URL,
-  { useNewUrlParser: true, useUnifiedTopology: true })
+require('./config/passport')(passport);
 
-const Schema = mongoose.Schema;
-const UserDetail = new Schema({
-  email: String,
-  password: String,
-  firstName: String, 
-  lastName: String
-})
+app.use(morgan('dev')); 
+app.use(cookieParser());
+app.use(bodyParser()); 
 
-UserDetail.plugin(passportLocalMongoose)
-const UserDetails = mongoose.model('userInfo', UserDetail, 'userInfo')
+app.set('view engine', 'hbs');
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }));
 
-passport.use(UserDetails.createStrategy())
+app.use(express.static(__dirname + '/public'));
 
-passport.serializeUser(UserDetails.serializeUser())
-passport.deserializeUser(UserDetails.deserializeUser())
+app.use(session({ secret: process.env.SESSION_SECRET }));
+app.use(passport.initialize());
+app.use(passport.session()); 
+app.use(flash());
 
-app.get('/', (req, res) => {
-  res.render('home')
-})
+require('./app/routes.js')(app, passport);
 
-app.get('/login', (req, res) => {
-  if (req.query.info) {
-    res.render('login', {info: req.query.info})
-  } else {
-    res.render('login')
-  }
-})
+const port = process.env.PORT || 3000;
 
-app.post('/login', (req, res, next) => {
-  passport.authenticate('local',
-    (err, user, info) => {
-      if (err) {
-        return next(err)
-      }
-
-      if (!user) {
-        return res.redirect('/login?info=' + info)
-      }
-
-      req.logIn(user, (err) => {
-        if (err) {
-          return next(err)
-        }
-
-        return res.send('/')
-      })
-
-    })(req, res, next)
-})
-
-app.get('/register', function(req, res) {
-  res.render('register')
-})
-
-app.post('/register', function(req, res) {
-  UserDetails.register(
-    { email: req.body.email, active: true },
-    req.body.password,
-    { firstName: req.body.firstName },
-    { lastName: req.body.lastName }
-  )
-  res.redirect('/')
-})
-
-app.get('/private',
-  connectEnsureLogin.ensureLoggedIn(),
-  (req, res) => res.render('private')
-)
-
-app.get('/user',
-  connectEnsureLogin.ensureLoggedIn(),
-  (req, res) => res.send({user: req.user})
-)
-
-app.get('/about', (req, res) => {
-  res.render('about')
-})
-
-app.get('/reading-levels', (req, res) => {
-  res.render('reading-levels')
-})
-
-app.get('/cool-cats', (req, res) => {
-  res.render('cool-cats')
-})
-
-app.get('/rockin-rollers', (req, res) => {
-  res.render('rockin-rollers')
-})
-
-app.get('/rock-stars', (req, res) => {
-  res.render('rock-stars')
-})
-
-app.get('/super-stars', (req, res) => {
-  res.render('super-stars')
-})
-
-app.get('/mega-stars', (req, res) => {
-  res.render('mega-stars')
-})
-
-app.get('/rock-legends', (req, res) => {
-  res.render('rock-legends')
-})
-
-const port = process.env.PORT || 3000
-
-app.listen(port, () => console.log(`Example app listening at port ${port}`))
+app.listen(port);
