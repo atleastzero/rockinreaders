@@ -1,3 +1,3 @@
 module.exports = {
-    'url': process.env.MONGODB_URL
+    'url': process.env.MONGODB_URI
 }
