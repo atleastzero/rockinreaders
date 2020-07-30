@@ -1,0 +1,63 @@
+<div class="page-header">
+    <div class="page-background new-reader"></div>
+    <h2 class="page-title">New Reader</h2>
+</div>
+
+<div class="page-content">
+    <div class="spacer"></div>
+    <form action="/readers" method="post">
+        <div class="title">
+            <h3>Sign Up Your First Reader!</h3>
+        </div>
+        <div class="field">
+            <label>Reader First Name:</label>
+            <br>
+            <input class="full-width" type="text" name="firstName" required>
+            <br>
+        </div>
+        <div class="field">
+            <label>Reader Last Name:</label>
+            <br>
+            <input class="full-width" type="text" name="lastName" required>
+            <br>
+        </div>
+        <div class="field">
+            <label>Reader Age:</label>
+            <br>
+            <input class="full-width" type="number" name="age" required>
+            <br>
+        </div>
+        <div class="field">
+            <label>Reader's Approximate Reading Level:</label>
+            <br>
+            <p><label>
+                <input type="radio" name="reading-level" value="1" required>
+                Cool Cats (Learning Letters and Sounds)
+            </label></p>
+            <p><label>
+                <input type="radio" name="reading-level" value="2">
+                Rockin Rollers (Learning to read short vowel words)
+            </label></p>
+            <p><label>
+                <input type="radio" name="reading-level" value="3">
+                Rock Stars (Learning to read silent e words)
+            </label></p>
+            <p><label>
+                <input type="radio" name="reading-level" value="4">
+                Super Stars (Learning to read double vowel and consonant words)
+            </label></p>
+            <p><label>
+                <input type="radio" name="reading-level" value="5">
+                Mega Stars (Learning to read words with prefixes and suffixes)
+            </label></p>
+            <p><label>
+                <input type="radio" name="reading-level" value="6">
+                Rock Legends (Learning to read multiple syllable words)
+            </label></p>
+            <br>
+        </div>
+        <div class="field">
+            <input class="btn btn-dark" type="submit" value="Create Reader">
+        </div>
+    </form>
+</div>

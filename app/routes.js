@@ -1,4 +1,5 @@
 const { authenticate } = require("passport");
+const controller = require('./controller')
 
 module.exports = function(app, passport) {
     // =====================================
@@ -68,7 +69,7 @@ module.exports = function(app, passport) {
 
     app.get('/profile', isLoggedIn, function(req, res) {
         res.render('profile', {
-            user : req.user
+            user : req.user.toJSON()
         });
     });
 
@@ -76,6 +77,15 @@ module.exports = function(app, passport) {
         req.logout();
         res.redirect('/');
     });
+
+    // =====================================
+    // Reader Pages ========================
+    // =====================================
+    app.get('/new-reader', (req, res) => {
+        res.render('new-reader');
+    })
+
+    app.post('/readers', controller.createReader);
 };
 
 // route middleware to make sure a user is logged in
